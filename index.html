@@ -1,0 +1,651 @@
+Æ<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julie - Podcasts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ========== EFFET ÉTOILÉ ========== */
+        .starry-bg {
+            position: relative;
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+            overflow: hidden;
+        }
+
+        .starry-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, white, transparent),
+                radial-gradient(2px 2px at 60px 70px, white, transparent),
+                radial-gradient(1px 1px at 50px 50px, white, transparent),
+                radial-gradient(1px 1px at 130px 80px, white, transparent),
+                radial-gradient(2px 2px at 90px 10px, white, transparent),
+                radial-gradient(1px 1px at 10px 90px, white, transparent),
+                radial-gradient(1px 1px at 150px 30px, white, transparent),
+                radial-gradient(2px 2px at 110px 120px, white, transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: stars 80s linear infinite;
+            opacity: 0.8;
+        }
+
+        .starry-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 40px 60px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 100px 100px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 150px 25px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 180px 90px, rgba(255,255,255,0.9), transparent);
+            background-repeat: repeat;
+            background-size: 250px 250px;
+            animation: stars 100s linear infinite reverse;
+            opacity: 0.6;
+        }
+
+        @keyframes stars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-200px); }
+        }
+
+        /* ========== HEADER / HERO ========== */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .platforms {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .platform-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+        }
+
+        .platform-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+        }
+
+        .platform-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* ========== CONTAINER ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #1e3a5f;
+        }
+
+        /* ========== SÉRIES ========== */
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .series-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .series-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.2);
+        }
+
+        .series-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .series-content {
+            padding: 25px;
+        }
+
+        .series-content h3 {
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .series-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .series-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1e3a5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .series-link:hover {
+            background: #0a1628;
+        }
+
+        /* ========== SUPPORT / DONS ========== */
+        .support-section {
+            background: white;
+            padding: 60px 20px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .support-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            border-color: #1e3a5f;
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.2);
+        }
+
+        .support-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .support-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .support-card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .support-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        .support-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #1e3a5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .support-btn:hover {
+            background: #0a1628;
+            transform: scale(1.05);
+        }
+
+        /* ========== ÉPISODES ========== */
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .episode-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.15);
+        }
+
+        .episode-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .episode-content {
+            padding: 20px;
+        }
+
+        .episode-date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .episode-content h3 {
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .episode-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* ========== NEWSLETTER ========== */
+        .newsletter {
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .newsletter p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+       .newsletter-disclaimer {
+    font-size: 0.95em;
+    opacity: 0.85;
+    margin-top: 30px;     /* ← REMPLACE margin-bottom par margin-top */
+    margin-bottom: 0;     /* ← AJOUTE cette ligne */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: white;
+            color: #1e3a5f;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .newsletter-form button:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links a:hover {
+            color: #0a1628;
+            transform: scale(1.1);
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .newsletter h2 {
+                font-size: 2em;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO avec effet étoilé -->
+    <section class="hero starry-bg">
+        <img src="images/julie.jpg" alt="Julie" class="profile-img">
+        <h1>Julie - Podcasts</h1>
+        <p>Podcasts narratifs et documentaires audio</p>
+
+<div class="platforms">
+    <a href="#" class="platform-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+        </svg>
+        Spotify
+    </a>
+  <a href="#" class="platform-btn">
+    <svg viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg"
+         fill="currentColor"
+         aria-hidden="true">
+        <path d="M16.365 1.43c0 1.14-.465 2.273-1.275 3.12-.855.89-2.295 1.58-3.525 1.48-.15-1.11.36-2.3 1.155-3.18.81-.9 2.205-1.56 3.645-1.42zM20.5 17.2c-.42.96-.63 1.38-1.17 2.24-.75 1.2-1.8 2.7-3.09 2.71-1.14.01-1.44-.75-2.97-.75s-1.86.74-2.97.76c-1.29.01-2.28-1.36-3.03-2.56-2.1-3.35-2.32-7.28-1.02-9.3.93-1.44 2.4-2.28 3.78-2.28 1.47 0 2.4.8 3.62.8 1.2 0 1.92-.8 3.61-.8 1.23 0 2.53.67 3.46 1.82-3.04 1.66-2.55 6.03.78 7.36z"/>
+    </svg>
+    Apple Music
+</a>    
+    <a href="#" class="platform-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        YouTube
+    </a>
+
+    <a href="#" class="platform-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.81 6.75c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zM0 15.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zM0 12.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zM0 9.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zm0-3c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75z"/>
+        </svg>
+        Deezer
+    </a>
+</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- LES SÉRIES -->
+    <div class="container">
+        <h2 class="section-title"> Mes Séries</h2>
+
+        <div class="series-grid">
+            <div class="series-card">
+                <img src="https://via.placeholder.com/400x200/1e3a5f/ffffff?text=Série+1" alt="Série 1" class="series-image">
+                <div class="series-content">
+                    <h3>Série 1</h3>
+                    <p>Description de la première série de podcasts...</p>
+                    <a href="#" class="series-link">Écouter →</a>
+                </div>
+            </div>
+
+            <div class="series-card">
+                <img src="https://via.placeholder.com/400x200/1e3a5f/ffffff?text=Série+2" alt="Série 2" class="series-image">
+                <div class="series-content">
+                    <h3>Série 2</h3>
+                    <p>Description de la deuxième série de podcasts...</p>
+                    <a href="#" class="series-link">Écouter →</a>
+                </div>
+            </div>
+
+            <div class="series-card">
+                <img src="https://via.placeholder.com/400x200/1e3a5f/ffffff?text=Série+3" alt="Série 3" class="series-image">
+                <div class="series-content">
+                    <h3>Série 3</h3>
+                    <p>Description de la troisième série de podcasts...</p>
+                    <a href="#" class="series-link">Écouter →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPPORT / DONS -->
+    <section class="support-section">
+        <div class="support-content">
+            <h2 class="section-title">💜 Soutenez le projet</h2>
+            <p style="color: #666; font-size: 1.1em; margin-bottom: 40px;">
+                Le prix d'un petit café pour que l'aventure continue ☕✨
+            </p>
+
+            <div class="support-cards">
+                <div class="support-card">
+                    <div class="support-icon">☕</div>
+                    <h3>Don Ponctuel</h3>
+                    <p>Un petit geste qui fait toute la différence</p>
+                    <a href="#" class="support-btn">Offrir un café</a>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">👑</div>
+                    <h3>Abonnement</h3>
+                    <p>Merci pour tout votre soutien</p>
+                    <div class="support-price">6€/mois</div>
+                    <a href="#" class="support-btn">S'abonner ❤️</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DERNIERS ÉPISODES -->
+    <div class="container">
+        <h2 class="section-title">🔥 Derniers Épisodes</h2>
+
+        <div class="episodes-grid">
+            <div class="episode-card">
+                <img src="https://via.placeholder.com/280x180/1e3a5f/ffffff?text=Épisode" alt="Épisode" class="episode-image">
+                <div class="episode-content">
+                    <div class="episode-date">Il y a 2 jours</div>
+                    <h3>Titre de l'épisode</h3>
+                    <p>Description de l'épisode...</p>
+                </div>
+            </div>
+
+            <div class="episode-card">
+                <img src="https://via.placeholder.com/280x180/1e3a5f/ffffff?text=Épisode" alt="Épisode" class="episode-image">
+                <div class="episode-content">
+                    <div class="episode-date">Il y a 5 jours</div>
+                    <h3>Titre de l'épisode</h3>
+                    <p>Description de l'épisode...</p>
+                </div>
+            </div>
+
+            <div class="episode-card">
+                <img src="https://via.placeholder.com/280x180/1e3a5f/ffffff?text=Épisode" alt="Épisode" class="episode-image">
+                <div class="episode-content">
+                    <div class="episode-date">Il y a 1 semaine</div>
+                    <h3>Titre de l'épisode</h3>
+                    <p>Description de l'épisode...</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- NEWSLETTER avec effet étoilé -->
+<section class="newsletter starry-bg">
+    <h2>✨ Ne ratez aucun épisode</h2>
+    <p>Recevez mes nouveaux épisodes par mail à chaque nouvel sortie</p>
+
+    <form class="newsletter-form">
+        <input type="email" placeholder="Votre email" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <p class="newsletter-disclaimer">Pas de spam, promis ! 🎧</p>
+</section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-links">
+            <a href="#">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: #1e3a5f;">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
+       <a href="#">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: #1e3a5f;">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+    YouTube
+</a>
+
+
+
+            </a>
+        </div>
+        <p>&copy; 2025 Julie - Podcasts. Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
+
+
