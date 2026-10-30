@@ -1,0 +1,12 @@
+{
+  "podcasts": [
+    {
+      "id": "nuit-etoile",
+      "title": "Nuit étoilé",
+      "description": "Contes, légendes et récits populaires venus d’ici et d’ailleurs.",
+      "image": null,
+      "episodesCount": 0
+    }
+  ],
+  "episodes": []
+}
