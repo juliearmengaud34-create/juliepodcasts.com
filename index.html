@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#0a1628" name="theme-color"/>
+<meta content="Julie Podcasts : contes, légendes et documentaires audio. Découvrez les séries, écoutez les épisodes et explorez leurs lieux sur une carte interactive." name="description"/>
+<title>Julie - Podcasts | Histoires et légendes</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/><link href="v2.css" rel="stylesheet"/>
+<script defer="" src="app.js"></script>
+<link href="mobile.css" rel="stylesheet"/>
+
+<style>
+.approved-map-section{display:block;width:100%;height:auto!important;min-height:0!important;overflow:visible!important;padding:0!important;margin:0!important}
+#jp-map{display:block;width:100%;height:auto;min-height:0}
+#approved-map{display:none!important}
+</style>
+<style id="jp-retouches-validees">
+
+/* ESSAI DU 31 OCTOBRE — uniquement l'équilibre des dons et la flèche cœur. */
+@media (min-width: 721px) {
+  .episodes-section { padding-bottom: 60px; }
+  .support-section { padding-top: 64px; padding-bottom: 70px; }
+  .site-footer .footer-arrow-set { left: -20px; }
+}
+@media (max-width: 720px) {
+  .episodes-section { padding-bottom: 35px; }
+  .support-section { padding-top: 30px; padding-bottom: 58px; }
+  .site-footer .footer-arrow-set { left: 9px; }
+  .site-footer .social-icons { left: 48%; }
+}
+
+/* ESSAI 2 — footer mobile, centre visuel flèche + réseaux. */
+@media (max-width: 355px) {
+  .site-footer .footer-arrow-set { left: 7px; }
+  .site-footer .social-icons { left: 50%; }
+}
+
+</style>
+</head>
+<body data-demo="false">
+<a class="skip-link" href="#series">Aller aux séries</a>
+<main>
+<section class="hero starry-bg" id="accueil">
+<img alt="Julie" class="profile-img" decoding="async" height="200" loading="eager" src="images/julie-apercu.jpg" width="200"/>
+<h1>Julie - Podcasts</h1>
+<p>Podcasts narratifs et documentaires audio</p>
+<div class="platforms">
+<span class="platform-btn pending" title="Lien Spotify à renseigner avant le lancement">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path>
+</svg>
+        Spotify
+    </span>
+<span class="platform-btn pending" title="Lien Apple Music à renseigner avant le lancement">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.365 1.43c0 1.14-.465 2.273-1.275 3.12-.855.89-2.295 1.58-3.525 1.48-.15-1.11.36-2.3 1.155-3.18.81-.9 2.205-1.56 3.645-1.42zM20.5 17.2c-.42.96-.63 1.38-1.17 2.24-.75 1.2-1.8 2.7-3.09 2.71-1.14.01-1.44-.75-2.97-.75s-1.86.74-2.97.76c-1.29.01-2.28-1.36-3.03-2.56-2.1-3.35-2.32-7.28-1.02-9.3.93-1.44 2.4-2.28 3.78-2.28 1.47 0 2.4.8 3.62.8 1.2 0 1.92-.8 3.61-.8 1.23 0 2.53.67 3.46 1.82-3.04 1.66-2.55 6.03.78 7.36z"></path>
+</svg>
+    Apple Music
+</span>
+<a class="platform-btn" href="https://www.youtube.com/@Juliepodcasts" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+        YouTube
+    </a>
+<span class="platform-btn pending" title="Lien Deezer à renseigner avant le lancement">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.81 6.75c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zm0 3c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zM0 15.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zM0 12.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75H24v-1.5h-4.44c-.413 0-.75.336-.75.75zM0 9.75c0 .414.337.75.75.75H5.19v-1.5H.75c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5H6.99c-.413 0-.75.336-.75.75zm6.24 0c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75zm0-3c0 .414.337.75.75.75h3.69v-1.5h-3.69c-.413 0-.75.336-.75.75z"></path>
+</svg>
+        Deezer
+    </span>
+</div>
+</section>
+<section aria-labelledby="series-title" class="series-section content-section" id="series">
+<div class="content-wrap">
+<div class="heading heading-center">
+<h2 id="series-title">Mes séries</h2>
+<p>Des récits à explorer, une série après l’autre.</p>
+</div>
+<div aria-live="polite" class="series-grid" id="series-grid">
+<!-- Contenu initial accessible avant chargement de l'API -->
+<article class="series-item">
+<div class="series-art"><img alt="Illustration provisoire de Bande de Légende" src="images/serie-illustration.jpg"/></div>
+<h3>Nuit étoilé</h3><p>Contes, légendes et récits populaires venus d'ici et d'ailleurs.</p>
+<span class="series-coming"><span aria-hidden="true">♫</span> Bientôt disponible</span>
+</article>
+<article class="series-item"><div class="series-art abstract-art art-next-one"><span aria-hidden="true" class="next-symbol">✧</span><span class="next-art-text">Une nouvelle série</span></div><h3>Une prochaine série</h3><p>Un nouvel univers à découvrir prochainement.</p><span class="series-coming"><span aria-hidden="true">♫</span> Bientôt disponible</span></article>
+<article class="series-item"><div class="series-art abstract-art art-next-two"><span aria-hidden="true" class="next-symbol">✦</span><span class="next-art-text">D'autres histoires</span></div><h3>Et d'autres histoires…</h3><p>La suite de l'aventure est en préparation.</p><span class="series-coming"><span aria-hidden="true">♫</span> Bientôt disponible</span></article>
+</div>
+</div>
+</section>
+<section aria-labelledby="episodes-title" class="episodes-section content-section" id="episodes">
+<div class="content-wrap">
+<div class="heading heading-center">
+<h2 id="episodes-title">Derniers épisodes</h2>
+<span aria-hidden="true" class="heading-stroke"></span>
+<p>Les derniers récits à écouter</p>
+</div>
+<div aria-live="polite" class="episodes-list" id="episodes-grid">
+<div class="upcoming-episode">
+<span aria-hidden="true" class="upcoming-illustration">✧</span>
+<div><span class="episode-series-name">NUIT ÉTOILÉ</span><h3>Les premières histoires arrivent bientôt</h3><p>Les épisodes apparaîtront ici dès leur publication sur Acast.</p></div>
+<span class="upcoming-pill">En préparation</span>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="support-title" class="support-section content-section" id="soutenir">
+<div class="content-wrap support-wrap">
+<div class="heading heading-center support-heading">
+<h2 id="support-title"> Soutenez le projet</h2>
+<p>Le prix d'un petit café pour que l'aventure continue ☕✨</p>
+</div>
+<div class="support-grid">
+<article class="support-card support-one">
+<div aria-hidden="true" class="card-flecks"><span>✦</span><span>✧</span><span>✦</span></div>
+<svg aria-hidden="true" class="support-outline-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 80 80"><path d="M18 28h38v24a18 18 0 0 1-18 18h-2a18 18 0 0 1-18-18V28Z"></path><path d="M56 31h7c12 0 12 19-7 19M23 75h40"></path><path d="M31 20c-7-8 7-12 0-19M42 20c-7-8 7-12 0-19"></path></svg>
+<h3>Don ponctuel</h3>
+<p>Un petit geste qui fait toute la différence.</p>
+<a class="support-cta support-cta-dark" href="https://buy.stripe.com/00w7sLe2m2ji4Rm4LNf3a01" rel="noopener noreferrer" target="_blank">Faire un don →</a>
+</article>
+<article class="support-card support-two starfield">
+<svg aria-hidden="true" class="support-outline-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 80 80"><path d="M11 55 7 24l20 14L40 14l13 24 20-14-4 31H11Z"></path><path d="M11 61h58v7H11zM7 24a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm33-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm33 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path></svg>
+<h3>Abonnement</h3>
+<p>Pour soutenir l’aventure chaque mois.</p>
+<strong class="support-price">6 €/mois</strong>
+<a class="support-cta support-cta-light" href="https://buy.stripe.com/bJe6oH0bw6zyfw0guvf3a00" rel="noopener noreferrer" target="_blank">S’abonner →</a>
+</article>
+</div>
+</div>
+</section>
+<section aria-label="Explorer les légendes sur la carte interactive" class="approved-map-section" id="carte"><div id="jp-map" data-demo="false" aria-label="Carte des épisodes"><template id="jp-map-source"><style>:host{display:block;width:100%;box-sizing:border-box;color:#102747;background:#fff;font-family:Georgia,"Times New Roman",serif} :host *, :host *::before,:host *::after{box-sizing:border-box}
+
+:root{--ink:#102747;--navy:#0b2342;--paper:#fff;--gold:#bea07b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:#fff;font-family:Georgia,"Times New Roman",serif}
+button{font:inherit}
+.section{max-width:1648px;margin:0 auto;padding:72px clamp(28px,4.75vw,78px) 50px}
+.head{margin:0 42px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:60px}
+.head h2{font-size:clamp(39px,3.65vw,60px);font-weight:500;line-height:1.10;letter-spacing:-1.7px;margin:0 0 14px;color:#071d3b}
+.head p{font-size:clamp(17px,1.35vw,22px);line-height:1.3;margin:0;letter-spacing:-.35px}
+.note{color:#173d67;position:relative;margin:-4px 25px 0 0;transform:rotate(-8deg);font:italic 29px/1.02 "Bradley Hand","Segoe Print",cursive;min-width:230px;text-align:center}
+.note i{position:absolute;right:-21px;bottom:5px;color:#c5a17b;font-size:42px;font-style:normal;transform:rotate(8deg)}
+.map{height:clamp(400px,31.2vw,514px);border-radius:23px;position:relative;overflow:hidden;border:1px solid rgba(209,226,245,.12);background:#081e39;box-shadow:0 16px 32px rgba(19,48,82,.09)}
+/* Validated image: this is the real approved map texture, not a reinterpreted SVG. */
+.map-base{position:absolute;inset:0;background:linear-gradient(125deg,#071b34,#092443);pointer-events:none}
+.map-base:after{content:"";position:absolute;right:0;top:0;width:25%;height:100%;background-image:radial-gradient(circle at 18% 12%,rgba(255,255,255,.75) 0 1px,transparent 2px),radial-gradient(circle at 66% 33%,rgba(255,255,255,.65) 0 1.1px,transparent 2px),radial-gradient(circle at 53% 91%,rgba(201,226,255,.6) 0 1px,transparent 2px);background-size:100px 160px,140px 127px,110px 160px;opacity:.7}
+.map-picture{height:100%;width:75.55%;position:absolute;inset:0 auto auto 0;background-image:url('images/carte-fond-validee.jpg');background-size:100% 100%;background-repeat:no-repeat;-webkit-mask-image:linear-gradient(to right,black 0%,black 89%,transparent 100%);mask-image:linear-gradient(to right,black 0%,black 89%,transparent 100%);}
+/* Use an actual image of the accepted map under the interactive pins; no geometry changes. */
+.hotspot{border:0;cursor:pointer;position:absolute;z-index:4;transform:translate(-50%,-50%);border-radius:50%;width:32px;height:32px;background:transparent;outline-offset:5px}
+.hotspot:focus-visible{outline:2px solid #fff}
+.hotspot:hover:after,.hotspot:focus-visible:after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid #fff;box-shadow:0 0 16px 5px rgba(180,214,255,.4)}
+.story{position:absolute;z-index:6;top:15.5%;right:2.85%;width:21.65%;min-width:300px;max-width:328px;height:74.6%;min-height:365px;border-radius:20px;background:linear-gradient(#fff,#fbfbfa);box-shadow:0 16px 32px rgba(0,9,23,.26);display:flex;flex-direction:column;padding:17px 17px 21px}
+.story[hidden]{display:none}
+.story-photo-wrap{position:relative;height:133px;min-height:133px;flex:none;border-radius:9px;overflow:hidden}
+.story-photo{width:100%;height:100%;object-fit:cover;display:block}
+.close{position:absolute;right:16px;top:16px;border:0;background:white;color:#b9a487;border-radius:30px;width:37px;height:37px;font:24px/1 Georgia;cursor:pointer;display:grid;place-items:center;z-index:7}
+.close:hover{background:#f0ede9}
+.story-body{padding:14px 9px 0;display:flex;flex-direction:column;flex:1}
+.country{font:650 11px/1.3 system-ui,sans-serif;letter-spacing:.13em;color:#173458;margin-bottom:8px}
+.story h3{font:600 22px/1.15 Georgia,serif;margin:0 0 9px;color:#112746}
+.story p{font:17px/1.3 Georgia,serif;color:#193553;margin:0 0 12px}
+.listen{margin-top:auto;background:#102948;color:#fff;border:none;border-radius:32px;min-height:52px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 15px;font:18px/1.1 Georgia;cursor:pointer;gap:12px}
+.listen .play{color:#d8b48b;font:22px/1 Georgia}
+.listen:hover{background:#1d4069}
+.listen:focus-visible{outline:3px solid #ddc5a6;outline-offset:3px}
+.map-message{position:absolute;z-index:9;left:24px;bottom:18px;background:rgba(4,19,38,.85);border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:9px;padding:9px 13px;max-width:55%;font:13px system-ui,sans-serif;display:none}
+.map-message.show{display:block}
+.map-message button{background:none;color:white;border:none;text-decoration:underline;cursor:pointer}
+.bottom{display:grid;grid-template-columns:360px 255px 330px;column-gap:125px;align-items:center;padding:35px 0 0 8.5%;}
+.explore-btn{background:#132c4b;border:1px solid #1a3558;border-radius:45px;color:white;font:23px/1 Georgia;display:flex;align-items:center;justify-content:center;gap:55px;height:81px;width:360px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.explore-btn:hover{transform:translateY(-2px);box-shadow:0 9px 18px rgba(17,41,71,.2)}
+.explore-btn span{font-size:30px;font-weight:200}
+.stat{display:flex;align-items:center;gap:20px;height:81px}
+.stat.last{border-left:1px solid #ddcbb6;padding-left:75px}
+.stat svg{width:40px;height:40px;flex:none;stroke:#c1a381;stroke-width:1.8;fill:none}
+.stat strong{display:block;font-size:45px;font-weight:400;line-height:1;color:#0a2445}
+.stat small{font:15px/1.5 system-ui,sans-serif;color:#3c4553;white-space:nowrap;display:block;margin-top:3px}
+.footnote{padding:12px 0 0;text-align:center;color:#737984;font:11px system-ui,sans-serif}
+@media(max-width:1450px){.bottom{grid-template-columns:330px 230px 290px;column-gap:55px;padding-left:6%}.explore-btn{width:330px}.stat.last{padding-left:37px}.story{min-width:275px;max-width:320px}.head{margin-left:24px;margin-right:24px}}
+@media(max-width:1060px){.section{padding:52px 30px 40px}.head{margin:0 12px 25px}.note{font-size:23px;min-width:190px}.story{width:32%;right:2.7%;min-width:260px;height:auto;min-height:350px}.map{height:470px}.bottom{display:flex;justify-content:space-around;padding:30px 0 0;gap:15px}.explore-btn{width:290px;min-width:230px;flex:none;height:69px;gap:25px;font-size:19px}.stat.last{padding-left:18px}.stat svg{width:30px;height:30px}.stat strong{font-size:34px}.stat small{font-size:13px}}
+@media(max-width:680px){.section{padding:34px 16px 40px}.head{margin:0 5px 23px;display:block}.head h2{font-size:38px;letter-spacing:-.7px}.head p{font-size:16px}.note{font-size:20px;transform:rotate(-6deg);text-align:right;min-width:0;margin:20px 18px 0}.note i{right:-14px;font-size:28px}.map{height:660px;border-radius:17px}.map-picture{width:100%;height:325px;background-size:auto 100%;background-position:0 center;-webkit-mask-image:none;mask-image:none}.map-base:after{width:100%;height:100%;opacity:.23}.story{width:calc(100% - 36px);min-width:0;max-width:none;height:330px;min-height:0;top:auto;bottom:17px;right:18px;padding:14px 14px 17px}.story[hidden]{display:none}
+.story-photo-wrap{height:108px;min-height:108px}.story-body{padding:11px 9px 0}.country{margin-bottom:4px;font-size:10px}.story h3{font-size:20px;margin-bottom:5px}.story p{font-size:14px;margin-bottom:8px}.listen{height:43px;min-height:43px;font-size:15px}.hotspot{top:min(var(--y),42%) !important}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px 8px;justify-items:center;padding:22px 0 0}.explore-btn{grid-column:1/-1;width:100%;height:64px;max-width:none}.stat{height:54px;gap:8px}.stat.last{padding-left:17px}.stat strong{font-size:29px}.stat small{font-size:10px;white-space:normal}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} .explore-btn{transition:none}}
+
+/* Correction de la fiche uniquement : laisser sa hauteur suivre le contenu,
+   puis la centrer verticalement dans la carte pour ne jamais la couper. */
+@media (min-width:681px) {
+  .story {
+    height: auto;
+    min-height: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: calc(100% - 24px);
+  }
+}
+/* À ces largeurs le planisphère mesure 400–470 px de haut :
+   réduire légèrement la photo de la fiche, pas la taille de la carte. */
+@media (min-width:681px) and (max-width:1450px) {
+  .story-photo-wrap {
+    height: 100px;
+    min-height: 100px;
+  }
+}
+
+/* Vignette V2 (ancienne) : sa structure d'origine est restaurée. Aucun changement sur la carte. */
+.story {top:50%;right:2.85%;transform:translateY(-50%);width:295px;min-width:0;max-width:calc(100% - 30px);min-height:0;height:auto;padding:0;display:block;border-radius:19px;border:2px solid #eff2f5;background:#fff;color:#112746;box-shadow:0 13px 32px rgba(0,10,24,.27);overflow:hidden}
+.story[hidden]{display:none}
+.story-photo-wrap{height:135px;min-height:0;border-radius:0;overflow:hidden}
+.story-photo{width:100%;height:100%;object-fit:cover;display:block}
+.story-body{padding:19px 21px 18px;display:block}
+.country{display:block;font-family:system-ui,sans-serif;font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.12em;color:#36577a;margin:0 0 8px}
+.story h3{font:normal 22px/1.2 Georgia,serif;letter-spacing:0;color:#112746;margin:0 0 10px}
+.story p{font:normal 15px/1.5 Georgia,serif;color:#38485c;min-height:0;margin:0}
+.story-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;border-top:1px solid #dce3ec;margin-top:16px;padding-top:12px;font:12px/1.25 system-ui,sans-serif;color:#42546a}
+.story-next{flex:0 0 auto;display:grid;place-items:center;appearance:none;border:0;border-radius:50%;background:#c6def6;color:#21466f;width:37px;height:37px;font:24px/1 Georgia,serif;cursor:pointer;transition:background .2s}
+.story-next:hover,.story-next:focus-visible{background:#adcce9;outline-offset:3px}
+@media(max-width:1060px){.story{width:285px;right:20px}}
+@media(max-width:680px){.story{top:auto;bottom:17px;left:auto;right:18px;transform:none;width:calc(100% - 36px);max-width:none;min-width:0;height:auto;min-height:0;padding:0}.story-photo-wrap{height:120px;min-height:0}.story-body{padding:15px 17px 14px}.story h3{font-size:21px}.story p{font-size:14px}.story-footer{font-size:11px;margin-top:12px;padding-top:10px}.story-next{width:35px;height:35px}}
+
+/* Ajout fonctionnel : les vrais points ajoutés par le flux RSS */
+.hotspot.preview-hidden-hotspot::before,.hotspot.preview-hidden-hotspot[aria-pressed="true"]::before{display:none}
+.hotspot.live-hotspot::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:#effaff;box-shadow:0 0 6px 3px #b4d7ff,0 0 18px 7px #5396e8}
+.hotspot.live-hotspot[aria-pressed="true"]::before{background:#fff6d8;box-shadow:0 0 8px 4px #f4d39d,0 0 20px 9px #e3a44e}
+@media(max-width:680px){.hotspot.live-hotspot{top:min(var(--y),42%) !important}}
+
+/* Mise en page téléphone : même texture du planisphère et même vignette approuvées. */
+.map-viewport{position:absolute;inset:0;overflow:visible}
+.hotspots-layer{position:absolute;inset:0;pointer-events:none}
+.hotspots-layer .hotspot{pointer-events:auto}
+.map-pan-hint{display:none}
+@media(max-width:720px){
+  .section{padding:44px 16px 29px}
+  .head{margin:0 3px 22px}
+  .head h2{font-size:clamp(30px,8.4vw,37px);line-height:1.13;letter-spacing:-.8px;margin-bottom:12px}
+  .head p{font-size:15px;line-height:1.53}
+  .head p br{display:none}
+  .note{font-size:19px;text-align:right;margin:14px 12px 0 0}
+  .map{height:auto;min-height:0;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;background:#081e39}
+  .map-viewport{position:relative;inset:auto;display:block;width:100%;height:260px;min-height:260px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#547398 transparent;}
+  .map-base{position:absolute;inset:0 auto auto 0;width:570px;height:260px;pointer-events:none}
+  .map-base:after{display:none}
+  .map-picture{position:absolute;inset:0;width:100%;height:100%;background-size:100% 100%;background-position:left top;-webkit-mask-image:none;mask-image:none}
+  .hotspots-layer{position:absolute;inset:0 auto auto 0;width:570px;height:260px;pointer-events:none}
+  .hotspot{left:var(--x) !important;top:var(--y) !important; width:40px;height:40px;transform:translate(-50%,-50%)}
+  .map-pan-hint{display:block;flex:none;text-align:center;color:rgba(245,250,255,.85);font:500 12px/1.5 system-ui,sans-serif;letter-spacing:.03em;padding:9px 10px 0}
+  .story{display:block;position:relative;top:auto;bottom:auto;left:auto;right:auto;transform:none;width:calc(100% - 28px);max-width:none;min-width:0;min-height:0;height:auto;margin:12px 14px 15px;padding:0;border-radius:16px;box-shadow:0 10px 20px rgba(0,0,0,.16);border:1px solid rgba(230,237,246,.96);overflow:hidden}
+  .story[hidden]{display:none}
+  .story-photo-wrap{height:145px;min-height:0}
+  .story-body{padding:17px 17px 15px}
+  .country{font-size:11px;margin-bottom:7px}
+  .story h3{font-size:22px;line-height:1.25;margin-bottom:9px}
+  .story p{font-size:15px;line-height:1.48}
+  .story-footer{margin-top:15px;padding-top:13px;font-size:12px}
+  .story-next{width:44px;height:44px;min-width:44px;min-height:44px}
+  .map-message{position:relative;left:auto;bottom:auto;max-width:calc(100% - 28px);margin:0 14px 15px;font-size:13px}
+  .bottom{padding:23px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:21px 9px;align-items:center;justify-items:start}
+  .explore-btn{grid-column:1/-1;width:100%;height:58px;max-width:none;font-size:18px;gap:25px}
+  .explore-btn span{font-size:28px}
+  .stat{height:auto;gap:8px;min-width:0;align-items:center}
+  .stat svg{width:28px;height:28px}
+  .stat strong{font-size:32px}
+  .stat small{font-size:11px;line-height:1.3;white-space:normal}
+  .stat.last{padding-left:13px;border-left:1px solid #ddcbb6}
+  .footnote{font-size:11px;line-height:1.5;padding:17px 7px 0}
+}
+@media(max-width:350px){
+ .section{padding-inline:12px}
+ .head h2{font-size:30px}
+ .stat strong{font-size:28px}
+ .stat small{font-size:10px}
+}
+
+/* ESSAI : plus de hauteur au cadre, sans changer l'image ni la carte elle-même. */
+@media (min-width: 721px) {
+  .section { padding-top: 62px; }
+  .map { height: clamp(456px, 36vw, 550px); }
+}
+
+/* ESSAI 2 — davantage de respiration autour de la carte, sans toucher au planisphère. */
+@media (min-width: 721px) {
+  .section { padding-bottom: 65px; }
+  .head { margin-bottom: 36px; }
+  .head h2 { margin-bottom: 17px; }
+  .head p { line-height: 1.5; }
+  .bottom { padding-top: 44px; }
+  .footnote { padding-top: 23px; line-height: 1.6; }
+}
+@media (min-width: 721px) and (max-width: 1060px) {
+  .head { margin-bottom: 33px; }
+  .bottom { padding-top: 40px; }
+}
+</style><main><section aria-labelledby="section-title" class="section">
+<header class="head"><div><h2 id="section-title">Explorer les légendes</h2><p>Parcourez la carte et découvrez les lieux des récits.<br/>Chaque point vous emmène vers une histoire, un paysage, une culture.</p></div><div class="note">Des histoires<br/>aux quatre coins<br/>du monde <i aria-hidden="true">✧</i></div></header>
+<div aria-label="Carte interactive des lieux des épisodes" class="map" id="map">
+<div class="map-viewport" id="map-viewport"><div class="map-base"><div class="map-picture"></div></div><div class="hotspots-layer" id="hotspots-layer"></div></div><div class="map-pan-hint" aria-hidden="true">← Fais glisser la carte pour explorer le monde →</div>
+
+
+
+
+
+<article aria-label="Exemple fictif d’une fiche d’épisode à écouter" class="story" hidden="">
+<div class="story-photo-wrap"><img alt="Château au bord de la mer au crépuscule" class="story-photo" src="images/carte-vignette-validee.jpg"/></div>
+<div class="story-body"><span class="country">NUIT ÉTOILÉ · SAINT-MALO</span><h3>Les remparts et leurs secrets</h3>
+<p>Entre histoire et légende, les mystères de Saint-Malo.</p>
+<div class="story-footer"><span class="story-meta">Écouter · 38 min</span><button aria-label="Écouter l’épisode : démonstration, aucun audio disponible" class="story-next" type="button">→</button></div>
+</div>
+</article>
+<div class="map-message" id="msg" role="status"></div>
+</div>
+<div class="bottom">
+<button class="explore-btn" type="button">Explorer la carte <span aria-hidden="true">›</span></button>
+<div class="stat"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 22S5 14.5 5 9A7 7 0 0 1 19 9c0 5.5-7 13-7 13Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><div><strong>0</strong><small>lieux racontés</small></div></div>
+<div class="stat last"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"></path></svg><div><strong>1</strong><small>série à découvrir</small></div></div>
+</div>
+<div class="footnote">La carte s’enrichit automatiquement à chaque nouvelle histoire publiée sur Acast.</div>
+</section></main></template></div></section>
+<script>
+(() => {
+'use strict';
+const host=document.getElementById('jp-map');
+if(!host)return;
+const tpl=document.getElementById('jp-map-source');
+const root=host.attachShadow({mode:'open'});
+root.appendChild(tpl.content.cloneNode(true));
+'use strict';
+const preview=host.dataset.demo==='true';
+const map=root.querySelector('#map'),pinsLayer=root.querySelector('#hotspots-layer')||map,story=root.querySelector('.story'),photo=story.querySelector('.story-photo'),c=story.querySelector('.country'),title=story.querySelector('h3'),desc=story.querySelector('p'),meta=story.querySelector('.story-meta'),btn=story.querySelector('.story-next'),explore=root.querySelector('.explore-btn'),msg=root.querySelector('#msg'),counter=root.querySelectorAll('.stat strong'),note=root.querySelector('.footnote');
+const originalPhoto=photo.src;let points=[],current=0;
+const valid=(x)=>{try{const u=new URL(x);return ['http:','https:'].includes(u.protocol)?u.href:null}catch{return null}};
+function dur(x){if(!x)return '';if(/^\d+$/.test(String(x)))return Math.ceil(Number(x)/60)+' min';const p=String(x).split(':').map(Number);if(p.length===2)return Math.ceil((p[0]*60+p[1])/60)+' min';if(p.length===3)return Math.ceil((p[0]*3600+p[1]*60+p[2])/60)+' min';return String(x).slice(0,20)}
+// Calibrated to the image approved in the previous trials. Coordinates are approximate.
+function xy(lat,lon){const x=(Number(lon)+180)/360*75.55;const y=(.605-Number(lat)*.00555)*100;return {x:Math.max(3,Math.min(70,x)),y:Math.max(13,Math.min(87,y))}}
+function show(i){if(!points.length)return;current=i%points.length;const {episode,loc}=points[current];story.hidden=false;c.textContent=(episode.seriesTitle||'Nuit étoilé').toLocaleUpperCase('fr-FR')+' · '+(loc.place||loc.country||'MONDE').toLocaleUpperCase('fr-FR');title.textContent=episode.title;desc.textContent=(episode.description||'Écoutez cette histoire sur votre plateforme préférée.').replace(/\b(?:Pays|Country|Lieu|Place|Ville|Latitude|Longitude)\s*:[^\n]*/gi,'').trim().slice(0,145);meta.textContent='Écouter'+(episode.duration?' · '+dur(episode.duration):'');photo.src=valid(episode.image)||originalPhoto;photo.alt='Illustration de '+episode.title;const url=valid(episode.url);btn.setAttribute('aria-label',url?'Écouter '+episode.title:'Aperçu fictif sans audio disponible');btn.onclick=()=>{if(url)window.open(url,'_blank','noopener,noreferrer');else{msg.textContent='Cette fiche est un aperçu fictif : aucun audio à lire.';msg.classList.add('show')}};root.querySelectorAll('.hotspot').forEach((b,j)=>b.setAttribute('aria-pressed',String(j===current)));msg.classList.remove('show')}
+function render(data){points=data;pinsLayer.querySelectorAll('.hotspot').forEach(x=>x.remove());points.forEach(({episode,loc},i)=>{const p=preview?[{x:14,y:37},{x:40.1,y:34},{x:40.5,y:65},{x:61.5,y:42},{x:67.8,y:79}][i]||xy(loc.lat,loc.lon):xy(loc.lat,loc.lon),b=document.createElement('button');b.className='hotspot live-hotspot'+(preview?' preview-hidden-hotspot':'');b.type='button';b.style.left=p.x+'%';b.style.top=p.y+'%';b.style.setProperty('--y',p.y+'%');b.style.setProperty('--x',(p.x/0.7555)+'%');b.title=loc.place||loc.country||episode.title;b.setAttribute('aria-label','Découvrir '+episode.title+' : '+(loc.place||loc.country));b.onclick=()=>show(i);pinsLayer.append(b)});counter[0].textContent=String(new Set(points.map(p=>(p.loc.place||p.loc.country)+'|'+p.loc.lat+'|'+p.loc.lon)).size);if(!points.length){story.hidden=true;note.textContent='La carte s’enrichit automatiquement à chaque nouvelle histoire publiée sur Acast.'}else{show(0);note.textContent='Cliquez sur un point lumineux pour découvrir l’épisode et l’écouter.'}resize()}
+explore.onclick=()=>{if(points.length){show((current+1)%points.length);story.scrollIntoView({behavior:'smooth',block:'nearest'})}else{msg.textContent='Les points des histoires apparaîtront ici automatiquement après publication sur Acast.';msg.classList.add('show')}};
+if(preview){const d=[{lat:40,lon:-121},{lat:49,lon:-2},{lat:-5,lon:-52},{lat:35.5,lon:138},{lat:-26,lon:133}];const names=['Une histoire au bord du Pacifique','Les remparts et leurs secrets','Une histoire venue d’Afrique','La légende du mont Fuji','Une histoire d’Australie'];render(d.map((p,i)=>({loc:{...p,country:['États-Unis','France','Brésil','Japon','Australie'][i],place:['Pacifique','Saint-Malo','Brésil','Mont Fuji','Australie'][i]},episode:{title:names[i],seriesTitle:'Nuit étoilé',description:'Un récit entre histoire et légende, à découvrir au fil du monde.',duration:'38:00',image:i===1?originalPhoto:null,url:null}})));show(1);counter[0].textContent='0';note.textContent='APERÇU uniquement : les points et épisodes affichés sont fictifs. La version publiée affichera uniquement les vrais épisodes Acast.'}
+else{render([]);if(location.protocol!=='file:')fetch('data/acast.json',{headers:{Accept:'application/json'}}).then(r=>{if(!r.ok)throw Error('Flux indisponible');return r.json()}).then(data=>{const episodes=Array.isArray(data.episodes)?data.episodes:[];counter[1].textContent=String(Math.max(1,(data.podcasts||[]).length));render(episodes.filter(e=>e.location&&Number.isFinite(e.location.lat)&&Number.isFinite(e.location.lon)).map(episode=>({episode,loc:episode.location}))) }).catch(()=>{note.textContent='Les histoires seront ajoutées à la carte dès leur publication sur Acast.'})}
+function resize(){}
+})();
+</script>
+
+</main>
+<footer class="site-footer starry-bg"><div class="footer-inner"><div class="footer-social"><div class="footer-arrow-set"><span class="footer-callout">Rejoignez-nous</span><img aria-hidden="true" alt="" class="loop-arrow" src="images/fleche-coeur-validee.png" width="227" height="96"/></div><div class="social-icons"><a aria-label="Julie Podcasts sur Instagram" href="https://www.instagram.com/juliepodcasts/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="20" rx="5.5" width="20" x="2" y="2"></rect><circle cx="12" cy="12" r="4.4"></circle><circle cx="17.6" cy="6.5" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Julie Podcasts sur YouTube" href="https://www.youtube.com/@Juliepodcasts" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="14.8" rx="4.5" width="20.6" x="1.7" y="4.6"></rect><path d="m10 8.3 6.5 3.7-6.5 3.7z" fill="currentColor" stroke="none"></path></svg></a></div></div><small class="footer-copyright">© 2025 Julie - Podcasts. Tous droits réservés.</small></div></footer>
+</body>
+</html>
